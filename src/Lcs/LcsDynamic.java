@@ -2,9 +2,7 @@ package Lcs;
 
 public class LcsDynamic {
 	/**
-	 *  O(m+n)
-	 * @param X
-	 * @param Y
+	 * lcs O(m+n) + O(min(m,n))
 	 * @return
 	 */
 	public static int[][] buildMatrix(String X,String Y){
