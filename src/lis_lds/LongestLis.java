@@ -3,6 +3,7 @@ package lis_lds;
 public class LongestLis {
 	/**
 	 * get Lomgest Lis O(n^2)
+	 * Lds is lis reversc
 	 */
 	public static int[] longestSub(int[] a) {
 		int[][] mat =new int[a.length][a.length];
@@ -40,6 +41,12 @@ public class LongestLis {
 				right = middle;
 		}
 		return right;
+	}
+	public static int[] lds(int[] a) {
+		
+		
+		
+		return null;
 	}
 	public static void main(String[] args) {
 		int[] a={8,4,12,2,14,10,3,5,6,7};
