@@ -1,40 +1,13 @@
+package PlayNumber;
 
-public class PlayNumber {
-	public static int array[]= {6,9,1,2,16,8}; 
+public class PlayNumberAdaptive {
+
+	public static int array[]= {5,4,1,5,6,4}; 
 	public static int AliceResult=0;
 	public static int BobResult=0;
 	public static int begin=0;
 	public static int end=array.length-1;
-	public static void play_rulesGridy()
-	{
-		while(end>begin)
-		{
-			if(array[begin]>array[end])	
-			{
-				AliceResult+=array[begin];
-				begin++;
-			}
-			else
-			{
-				AliceResult+=array[end];
-				end--;
-			}
-			if(array[begin]>array[end])	
-			{
-				BobResult+=array[begin];
-				begin++;
-			}
-			else
-			{
-				BobResult+=array[end];
-				end--;
-			}
-		}
-		System.out.println("Alice");
-		System.out.println(AliceResult);
-		System.out.println("Bob");
-		System.out.println(BobResult);
-	}
+	
 	public static void play_rulesOddorEven()
 	{
 		int sumEven=0;
@@ -77,10 +50,8 @@ public class PlayNumber {
 
 	}
 	public static void main(String[] args) {
-		play_rulesGridy();
-		System.out.println("The winner is Bob");
 		play_rulesOddorEven();
-		System.out.println("The winner is Alice");
 	}
 
 }
+

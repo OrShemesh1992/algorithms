@@ -13,7 +13,7 @@ public class AlgoMinMax {
 			max=arr[1];
 			min=arr[0];
 		}
-		for (int i = 2; i < arr.length-1; i++) {
+		for (int i = 2; i < arr.length-1; i=i+2) {
 			if(arr[i]<arr[i+1]) {
 				if(arr[i]<min) {
 					min=arr[i];
@@ -40,7 +40,7 @@ public class AlgoMinMax {
 System.out.println("Max :"+max +" Min: "+min);
 	}
 	public static void main(String[] args) {
-		int[] a= {3,2,8,7,1,9};
+		int[] a= {3,2,8,7,1,9,10};
 		MaxMin(a);
 	}
 
