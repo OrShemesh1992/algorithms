@@ -2,55 +2,52 @@ package PlayNumber;
 
 public class PlayNumberAdaptive {
 
-	public static int array[]= {5,4,1,5,6,4}; 
-	public static int AliceResult=0;
-	public static int BobResult=0;
-	public static int begin=0;
-	public static int end=array.length-1;
-	
-	public static void play_rulesOddorEven()
-	{
-		int sumEven=0;
-		int sumOdd=0;
-		Boolean flag=true;
-		for (int i = 1; i < array.length; i+=2) {
-			sumEven+=array[i-1];
-			sumOdd+=array[i];
+	public static int[][] buildMatrix(int[] game){
+		int[][] mat=new int[game.length][game.length];
+		for (int i = 0; i < mat.length; i++) {
+			mat[i][i]=game[i];
 		}
-		if(sumEven<sumOdd)
-			flag=false;
-
-		while(end>begin)
-		{
-			if(flag&&begin%2==0||!flag&&begin%2!=0)	
-			{
-				AliceResult+=array[begin];
-				begin++;
-			}
-			else
-			{
-				AliceResult+=array[end];
-				end--;
-			}
-			if(array[begin]>array[end])	
-			{
-				BobResult+=array[begin];
-				begin++;
-			}
-			else
-			{
-				BobResult+=array[end];
-				end--;
+		for (int i = mat.length-2; i <= 0; i++) {
+			for (int j = i+1; j < mat.length; j++) {
+				mat[i][j]=Math.max(game[i]-mat[i+1][j], game[j]-mat[i][j-1]);
 			}
 		}
-		System.out.println("Alice");
-		System.out.println(sumEven);
-		System.out.println("Bob");
-		System.out.println(sumOdd);
+		return mat;
+	}
 
+	public static void gameStrategy(int game[]){
+		int	i=0, n = game.length, j = n - 1;
+		int first=0, second=0, firstSum = 0, secondSum = 0;
+		int mat[][]=buildMatrix(game);
+		for (int k = 0; k < n/2; k++) {
+			if (game[i]-mat[i+1][j] > game[j] - mat[i][j-1]) {
+				firstSum = firstSum + game[i];
+				first = i++;
+			}else {
+				firstSum = firstSum + game[j];
+				first = j--;
+			}
+			if (i != j) { //j>0 && i<n-1)
+				if (game[i]- mat[i+1][j] > game[j] - mat[i][j-1]) {
+					secondSum = secondSum + game[i];
+					second = i++;
+				}else {
+					secondSum = secondSum + game[j];
+					second = j--;
+				}
+			}else { //j=0 or i=n-1, the second takes the last element
+				second = j;
+				secondSum = secondSum + game[j];
+			}
+			System.out.println("first: game["+first+"] = "+game[first]+
+					", second: game["+second+"] = "+game[second]);
+		}
+		System.out.println("firstSum = "+firstSum+", secondSum = "+secondSum+
+				", diff = "+(firstSum-secondSum));
 	}
 	public static void main(String[] args) {
-		play_rulesOddorEven();
+		int[] a= {1,3,2,4,8,7};
+		gameStrategy(a);
 	}
 
 }
