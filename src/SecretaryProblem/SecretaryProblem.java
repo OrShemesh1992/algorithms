@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class SecretaryProblem {
 	/**
-	 * Worst case O(2nlog(n))
+	 * Worst case O(nlog(n)+n)
 	 * @param time
 	 * @return
 	 */
