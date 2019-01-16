@@ -2,7 +2,7 @@ package ballGlass;
 
 public class Glassball {
 	/**
-	 * Worst Case O(n/2 + 1) 
+	 * Worst Case O(n^2) 
 	 */
 	public static int numberofcheacking2(int n) {
 		int[] f=new int[n+1];
@@ -20,7 +20,7 @@ public class Glassball {
 		return f[n];
 	}
 	/**
-	 * Worst Case O(n/k + 1) 
+	 * Worst Case O(n^2*k)
 	 */
 	public static int numberOfCheckingK(int n,int k) {
 		int numCheack=0,min=0;
@@ -43,8 +43,6 @@ public class Glassball {
 	}
 	public static void main(String[] args) {
 		System.out.println(numberofcheacking2(115));
-		System.out.println(numberOfCheckingK(115,8));
-
+		System.out.println(numberOfCheckingK(115,2));
 	}
-
 }
