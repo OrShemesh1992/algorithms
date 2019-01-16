@@ -1,6 +1,6 @@
 package Matrix_1_0_Problem;
 
-public class Array_0_1 {
+public class Array_Matrix_0_1 {
 	/**
 	 *Worst Case O(n) 
 	 */
@@ -24,7 +24,7 @@ public class Array_0_1 {
 		return max;
 	}
 	/**
-	 * Worst case O(n)
+	 * Worst case O(n^2)
 	 */
 	public static int subMat(int[][] mat) {
 		int[][] help=new int[mat.length][mat.length];
