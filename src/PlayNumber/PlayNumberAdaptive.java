@@ -3,7 +3,7 @@ package PlayNumber;
 public class PlayNumberAdaptive {
 /**
  *  Play Number Worst case 𝑂(𝑛^2)
- */
+ *///{1,2,3,1,2,3}
 	public static int[][] buildMatrix(int[] game){
 		int[][] mat=new int[game.length][game.length];
 		for (int i = 0; i < mat.length; i++) {

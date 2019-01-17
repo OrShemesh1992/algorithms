@@ -42,12 +42,6 @@ public class LongestLis {
 		}
 		return right;
 	}
-	public static int[] lds(int[] a) {
-		
-		
-		
-		return null;
-	}
 	public static void main(String[] args) {
 		int[] a={8,4,12,2,14,10,3,5,6,7};
 		int[] b=longestSub(a);

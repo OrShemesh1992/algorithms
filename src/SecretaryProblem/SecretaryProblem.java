@@ -14,7 +14,7 @@ public static double SProblem(int[] time) {
 	return avg/time.length;
 }
 	public static void main(String[] args) {
-		int[] a= {5,2,6,7,2,7,4,7,8};
+		int[] a= {5,2,6,7,3,7,4,7,8};
 		System.out.println(SProblem(a));
 	}
 
