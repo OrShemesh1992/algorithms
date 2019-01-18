@@ -8,7 +8,6 @@ public class rectangle {
 			if(help[i] > 0) {
 				p = i-1;
 				x = 0;
-			}
 			while(p >= 0 && help[p] >= help[i]) {
 				p--;
 				x++;
@@ -18,6 +17,7 @@ public class rectangle {
 			while(q < help.length && help[q] >= help[i]) {
 				q++;
 				y++;
+			}
 			}
 			area = (x+y+1)*help[i];
 			if(area > maxarea) maxarea = area;

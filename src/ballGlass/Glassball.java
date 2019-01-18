@@ -2,6 +2,28 @@ package ballGlass;
 
 public class Glassball {
 	/**
+	 * Worst Case sqrt 2n 
+	 */
+	public static void useFloorPotenial(int a,int arr[]) {
+		int num = 1;
+		int numFloor=arr.length;
+		while(numFloor>num*(num+1)/2) {
+			num++;
+		}
+		int jump=num;
+		int step=num-1;
+		while (arr[jump] <=a) {
+			jump=jump+step;
+			step=step-1;
+		}
+		System.out.println("the first ball break "+jump);
+		int Floor=jump-(step+1);
+		while(arr[Floor]<=a) {
+			Floor++;
+		}
+		System.out.println("the Seconde Ball is Broking "+ Floor);
+	}
+	/**
 	 * Worst Case O(n^2) 
 	 */
 	public static int numberofcheacking2(int n) {
@@ -13,7 +35,7 @@ public class Glassball {
 			int min = n;
 			for (int j = 1; j < i-1; j++) {
 				int x = Math.max(j, f[i-j]+1);
-				if(x < min)min = x;
+				if (x < min) min = x;
 			}
 			f[i] = min;
 		}
@@ -44,6 +66,8 @@ public class Glassball {
 	public static void main(String[] args) {
 		System.out.println(numberofcheacking2(115));
 		System.out.println(numberOfCheckingK(115,2));
-		
+		int[] a= {1,2,3,4,5,6,7,8,9,10};
+		useFloorPotenial(8,a);
+
 	}
 }
