@@ -15,7 +15,8 @@ public class lis_lds {
 		}
 		return lis;
 	}
-	public static int binarySearchBetween (int arr[], int a, int lis) {
+	
+	public static int binarySearchBetween (int arr[], int a, int lis) {//{1,2,0,0,0,0,0,0} 2 2
 		if (a < arr[0])
 			return 0;
 		if (a >arr[lis])
